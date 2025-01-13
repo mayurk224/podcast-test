@@ -1,11 +1,15 @@
 name: Generate Podcast Feeds
-on: [push]
+on: 
+  push:
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
+      - name: Checkout Repository
         uses: actions/checkout@v3
+
       - name: Run Feed Generator
         uses: mayurk224/podcast-generator@main
